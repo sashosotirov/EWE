@@ -55,7 +55,8 @@
 #define FAN_THERMO_MIN_TEMP 45
 #define FAN_THERMO_MAX_TEMP 60
 #define FAN_THERMO_THERMISTOR_PIN -1
-#define FAN_THERMO_THERMISTOR_TYPE 1
+#define FAN_THERMO_THERMISTOR_TYPE 1home
+
 
 //#define EXTERNALSERIAL  use Arduino serial library instead of build in. Requires more ram, has only 63 byte input buffer.
 // Uncomment the following line if you are using Arduino compatible firmware made for Arduino version earlier then 1.0
@@ -64,7 +65,7 @@
 #define BLUETOOTH_SERIAL  -1
 #define BLUETOOTH_BAUD  115200
 #define MIXING_EXTRUDER 0
-#define FAST_COREXYZ
+#define FAST_COREXYZ 1
 #define DRIVE_SYSTEM 1
 #define XAXIS_STEPS_PER_MM 80
 #define YAXIS_STEPS_PER_MM 80
@@ -320,7 +321,7 @@ It also can add a delay to wait for spindle to run on full speed.
 #define DISABLE_E 0
 #define INVERT_X_DIR 0
 #define INVERT_X2_DIR 0
-#define INVERT_Y_DIR 0
+#define INVERT_Y_DIR 1
 #define INVERT_Y2_DIR 0
 #define INVERT_Z_DIR 0
 #define INVERT_Z2_DIR 0
@@ -329,9 +330,9 @@ It also can add a delay to wait for spindle to run on full speed.
 #define X_HOME_DIR -1
 #define Y_HOME_DIR -1
 #define Z_HOME_DIR -1
-#define X_MAX_LENGTH 340
-#define Y_MAX_LENGTH 110
-#define Z_MAX_LENGTH 120
+#define X_MAX_LENGTH 240
+#define Y_MAX_LENGTH 75
+#define Z_MAX_LENGTH 90
 #define X_MIN_POS 0
 #define Y_MIN_POS 0
 #define Z_MIN_POS 0
@@ -369,15 +370,15 @@ It also can add a delay to wait for spindle to run on full speed.
 #define DELTA_HOME_ON_POWER 0
 
 #define DELTASEGMENTS_PER_PRINTLINE 20
-#define STEPPER_INACTIVE_TIME 5L
-#define MAX_INACTIVE_TIME 5L
+#define STEPPER_INACTIVE_TIME 10L
+#define MAX_INACTIVE_TIME 20L
 #define MAX_FEEDRATE_X 200
 #define MAX_FEEDRATE_Y 200
 #define MAX_FEEDRATE_Z 2
-#define HOMING_FEEDRATE_X 20
-#define HOMING_FEEDRATE_Y 30
+#define HOMING_FEEDRATE_X 60
+#define HOMING_FEEDRATE_Y 60
 #define HOMING_FEEDRATE_Z 2
-#define HOMING_ORDER HOME_ORDER_YXZ
+#define HOMING_ORDER HOME_ORDER_XYZ
 #define ZHOME_PRE_RAISE 0
 #define ZHOME_PRE_RAISE_DISTANCE 10
 #define RAISE_Z_ON_TOOLCHANGE 0
@@ -391,20 +392,20 @@ It also can add a delay to wait for spindle to run on full speed.
 #define Y_BACKLASH 0
 #define Z_BACKLASH 0
 #define RAMP_ACCELERATION 1
-#define STEPPER_HIGH_DELAY 0
+#define STEPPER_HIGH_DELAY 2
 #define DIRECTION_DELAY 0
 #define STEP_DOUBLER_FREQUENCY 12000
 #define ALLOW_QUADSTEPPING 1
 #define DOUBLE_STEP_DELAY 0 // time in microseconds
-#define MAX_ACCELERATION_UNITS_PER_SQ_SECOND_X 1000
-#define MAX_ACCELERATION_UNITS_PER_SQ_SECOND_Y 1000
+#define MAX_ACCELERATION_UNITS_PER_SQ_SECOND_X 800
+#define MAX_ACCELERATION_UNITS_PER_SQ_SECOND_Y 800
 #define MAX_ACCELERATION_UNITS_PER_SQ_SECOND_Z 100
-#define MAX_TRAVEL_ACCELERATION_UNITS_PER_SQ_SECOND_X 1000
-#define MAX_TRAVEL_ACCELERATION_UNITS_PER_SQ_SECOND_Y 1000
+#define MAX_TRAVEL_ACCELERATION_UNITS_PER_SQ_SECOND_X 800
+#define MAX_TRAVEL_ACCELERATION_UNITS_PER_SQ_SECOND_Y 800
 #define MAX_TRAVEL_ACCELERATION_UNITS_PER_SQ_SECOND_Z 100
 #define INTERPOLATE_ACCELERATION_WITH_Z 0
 #define ACCELERATION_FACTOR_TOP 100
-#define MAX_JERK 20
+#define MAX_JERK 15
 #define MAX_ZJERK 0.3
 #define PRINTLINE_CACHE_SIZE 16
 #define MOVE_CACHE_LOW 10
@@ -440,7 +441,7 @@ It also can add a delay to wait for spindle to run on full speed.
 #define DRV_TMC2130
 
 // Uncomment if you use the stall guard for homing. Only for cartesian printers and xy direction
-#define SENSORLESS_HOMING
+//#define SENSORLESS_HOMING
 
 // The drivers with set CS pin will be used, all others are normal step/dir/enable drivers
 #define TMC2130_X_CS_PIN 53
@@ -451,7 +452,7 @@ It also can add a delay to wait for spindle to run on full speed.
 #define TMC2130_EXT2_CS_PIN -1
 
 // Per-axis current setting in mA { X, Y, Z, E0, E1, E2}
-#define MOTOR_CURRENT { 900,900,900,1000,1000,1000 }
+#define MOTOR_CURRENT { 1200,1400,1000,1000,1000,1000 }
 
 /**  Global settings - these apply to all configured drivers
 Per-axis values will override these
